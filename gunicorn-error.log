@@ -1,0 +1,76 @@
+
+[2025-07-10 20:04:43 +0800] [20103] [INFO] Handling signal: term
+[2025-07-10 20:04:43 +0800] [20106] [INFO] Worker exiting (pid: 20106)
+[2025-07-10 20:04:44 +0800] [20105] [INFO] Worker exiting (pid: 20105)
+[2025-07-10 20:04:45 +0800] [20103] [INFO] Shutting down: Master
+[2025-07-10 20:04:48 +0800] [20186] [INFO] Starting gunicorn 20.1.0
+[2025-07-10 20:04:48 +0800] [20186] [INFO] Listening at: http://0.0.0.0:5000 (20186)
+[2025-07-10 20:04:48 +0800] [20186] [INFO] Using worker: threads
+[2025-07-10 20:04:48 +0800] [20187] [INFO] Booting worker with pid: 20187
+[2025-07-10 20:04:48 +0800] [20188] [INFO] Booting worker with pid: 20188
+[2025-07-13 20:10:48 +0800] [20186] [INFO] Handling signal: term
+[2025-07-13 20:10:48 +0800] [20188] [INFO] Worker exiting (pid: 20188)
+[2025-07-13 20:10:48 +0800] [20187] [INFO] Worker exiting (pid: 20187)
+[2025-07-13 20:10:50 +0800] [20186] [INFO] Shutting down: Master
+[2025-07-13 20:10:53 +0800] [21620] [INFO] Starting gunicorn 20.1.0
+[2025-07-13 20:10:53 +0800] [21620] [INFO] Listening at: http://0.0.0.0:5000 (21620)
+[2025-07-13 20:10:53 +0800] [21620] [INFO] Using worker: threads
+[2025-07-13 20:10:53 +0800] [21621] [INFO] Booting worker with pid: 21621
+[2025-07-13 20:10:53 +0800] [21622] [INFO] Booting worker with pid: 21622
+[2025-07-13 20:14:14 +0800] [21620] [INFO] Handling signal: term
+[2025-07-13 20:14:14 +0800] [21622] [INFO] Worker exiting (pid: 21622)
+[2025-07-13 20:14:15 +0800] [21621] [INFO] Worker exiting (pid: 21621)
+[2025-07-13 20:14:16 +0800] [21620] [INFO] Shutting down: Master
+[2025-07-13 20:14:19 +0800] [21637] [INFO] Starting gunicorn 20.1.0
+[2025-07-13 20:14:19 +0800] [21637] [INFO] Listening at: http://0.0.0.0:5000 (21637)
+[2025-07-13 20:14:19 +0800] [21637] [INFO] Using worker: threads
+[2025-07-13 20:14:19 +0800] [21638] [INFO] Booting worker with pid: 21638
+[2025-07-13 20:14:19 +0800] [21639] [INFO] Booting worker with pid: 21639
+[2025-07-13 20:26:17 +0800] [21637] [INFO] Handling signal: term
+[2025-07-13 20:26:17 +0800] [21638] [INFO] Worker exiting (pid: 21638)
+[2025-07-13 20:26:17 +0800] [21639] [INFO] Worker exiting (pid: 21639)
+[2025-07-13 20:26:19 +0800] [21637] [INFO] Shutting down: Master
+[2025-07-13 20:26:21 +0800] [21668] [INFO] Starting gunicorn 20.1.0
+[2025-07-13 20:26:21 +0800] [21668] [INFO] Listening at: http://0.0.0.0:5000 (21668)
+[2025-07-13 20:26:21 +0800] [21668] [INFO] Using worker: threads
+[2025-07-13 20:26:21 +0800] [21669] [INFO] Booting worker with pid: 21669
+[2025-07-13 20:26:22 +0800] [21670] [INFO] Booting worker with pid: 21670
+[2025-07-13 20:28:53 +0800] [21668] [INFO] Handling signal: term
+[2025-07-13 20:28:54 +0800] [21670] [INFO] Worker exiting (pid: 21670)
+[2025-07-13 20:28:54 +0800] [21669] [INFO] Worker exiting (pid: 21669)
+[2025-07-13 20:28:55 +0800] [21668] [INFO] Shutting down: Master
+[2025-07-13 20:28:58 +0800] [21695] [INFO] Starting gunicorn 20.1.0
+[2025-07-13 20:28:58 +0800] [21695] [INFO] Listening at: http://0.0.0.0:5000 (21695)
+[2025-07-13 20:28:58 +0800] [21695] [INFO] Using worker: threads
+[2025-07-13 20:28:58 +0800] [21696] [INFO] Booting worker with pid: 21696
+[2025-07-13 20:28:58 +0800] [21697] [INFO] Booting worker with pid: 21697
+[2025-07-16 21:07:43 +0800] [23088] [INFO] Starting gunicorn 20.1.0
+[2025-07-16 21:07:43 +0800] [23088] [ERROR] Connection in use: ('0.0.0.0', 5000)
+[2025-07-16 21:07:43 +0800] [23088] [ERROR] Retrying in 1 second.
+[2025-07-16 21:07:44 +0800] [23088] [ERROR] Connection in use: ('0.0.0.0', 5000)
+[2025-07-16 21:07:44 +0800] [23088] [ERROR] Retrying in 1 second.
+[2025-07-16 21:07:45 +0800] [23088] [ERROR] Connection in use: ('0.0.0.0', 5000)
+[2025-07-16 21:07:45 +0800] [23088] [ERROR] Retrying in 1 second.
+[2025-07-16 21:07:46 +0800] [23088] [ERROR] Connection in use: ('0.0.0.0', 5000)
+[2025-07-16 21:07:46 +0800] [23088] [ERROR] Retrying in 1 second.
+[2025-07-16 21:07:47 +0800] [23088] [ERROR] Connection in use: ('0.0.0.0', 5000)
+[2025-07-16 21:07:47 +0800] [23088] [ERROR] Retrying in 1 second.
+[2025-07-16 21:07:48 +0800] [23088] [ERROR] Can't connect to ('0.0.0.0', 5000)
+[2025-08-22 15:43:20 +0800] [21695] [INFO] Handling signal: term
+[2025-08-22 15:43:20 +0800] [21697] [INFO] Worker exiting (pid: 21697)
+[2025-08-22 15:43:20 +0800] [21696] [INFO] Worker exiting (pid: 21696)
+[2025-08-22 15:43:22 +0800] [21695] [INFO] Shutting down: Master
+[2025-08-22 15:43:44 +0800] [7479] [INFO] Starting gunicorn 20.1.0
+[2025-08-22 15:43:44 +0800] [7479] [INFO] Listening at: http://0.0.0.0:5000 (7479)
+[2025-08-22 15:43:44 +0800] [7479] [INFO] Using worker: threads
+[2025-08-22 15:43:44 +0800] [7480] [INFO] Booting worker with pid: 7480
+[2025-08-22 15:43:44 +0800] [7481] [INFO] Booting worker with pid: 7481
+[2025-08-22 15:53:53 +0800] [7479] [INFO] Handling signal: term
+[2025-08-22 15:53:54 +0800] [7481] [INFO] Worker exiting (pid: 7481)
+[2025-08-22 15:53:54 +0800] [7480] [INFO] Worker exiting (pid: 7480)
+[2025-08-22 15:53:55 +0800] [7479] [INFO] Shutting down: Master
+[2025-08-22 15:53:58 +0800] [7495] [INFO] Starting gunicorn 20.1.0
+[2025-08-22 15:53:58 +0800] [7495] [INFO] Listening at: http://0.0.0.0:5000 (7495)
+[2025-08-22 15:53:58 +0800] [7495] [INFO] Using worker: threads
+[2025-08-22 15:53:58 +0800] [7496] [INFO] Booting worker with pid: 7496
+[2025-08-22 15:53:58 +0800] [7497] [INFO] Booting worker with pid: 7497

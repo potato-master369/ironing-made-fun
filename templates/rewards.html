@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ironing Made Fun Proof-of-concept</title>
+</head>
+<body style="margin:0; font-family:sans-serif; background:#f4f4f4;">
+
+  <nav style="background:#0A1D3D; display:flex; justify-content:center;">
+    <ul style="list-style:none; margin:0; padding:0; display:flex;">
+      <li style="position:relative;"><a href="/" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Home</a></li>
+      <li style="position:relative;"><a href="/about" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Introduction</a></li>
+      <li style="position:relative;"><a href="/submit" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Submit a photo</a></li>
+      <li style="position:relative;"><a href="/badges" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Badges</a></li>
+      <li style="position:relative;"><a href="/rewards" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Rewards</a></li>
+      <li style="position:relative;"><a href="/login" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Login</a></li>
+      <li style="position:relative;">
+              <a href="/forum" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Forum</a>
+      </li>
+      <li style="position:relative;">
+              <a href="/logout" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Log me out</a>
+      </li>
+    </ul>
+  </nav>
+
+  <script>
+    document.querySelectorAll('nav li').forEach(function(li) {
+      li.addEventListener('mouseenter', function() {
+        const submenu = li.querySelector('ul');
+        if (submenu) submenu.style.display = 'block';
+      });
+      li.addEventListener('mouseleave', function() {
+        const submenu = li.querySelector('ul');
+        if (submenu) submenu.style.display = 'none';
+      });
+    });
+  </script>
+
+  <h1 style="text-align:center;">Rewards</h1>
+  <p style="text-align:center;">Have you been ironing too much? Well, everyone deserves a little treat! Check out our Rewards (none are real) and take a bit of a break!</p>
+
+  <!-- 🌟 Responsive tile layout -->
+  <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; padding:20px;">
+    
+    <!-- Tile 1 -->
+    <div style="width:200px; border:1px solid #ccc; border-radius:10px; overflow:hidden; background:#fff; box-shadow:0 2px 6px rgba(0,0,0,0.1); text-align:center;">
+      <img src="{{ url_for('static', filename='michaelsoft.jpg') }}" alt="Wow so cool" style="width:100%; height:auto;">
+      <div style="padding:10px;">
+        <p style="margin:0; font-size:16px; font-weight:bold;">S$10 Michaelsoft gift card</p>
+      </div>
+      <button disabled>Redeem! (15000 points)</button>
+    </div>
+
+    <!-- Tile 2 -->
+    <div style="width:200px; border:1px solid #ccc; border-radius:10px; overflow:hidden; background:#fff; box-shadow:0 2px 6px rgba(0,0,0,0.1); text-align:center;">
+      <img src="{{ url_for('static', filename='pear.jpg') }}" alt="Much amazing" style="width:100%; height:auto;">
+      <div style="padding:10px;">
+        <p style="margin:0; font-size:16px; font-weight:bold;">S$10 Pear gift card</p>
+        <button disabled>Redeem! (15000 points)</button>
+      </div>
+    </div>
+
+    <!-- Tile 3 -->
+    <div style="width:200px; border:1px solid #ccc; border-radius:10px; overflow:hidden; background:#fff; box-shadow:0 2px 6px rgba(0,0,0,0.1); text-align:center;">
+      <img src="{{ url_for('static', filename='goggle.jpg') }}" alt="so original" style="width:100%; height:auto;">
+      <div style="padding:10px;">
+        <p style="margin:0; font-size:16px; font-weight:bold;">S$10 Goggle gift card</p>
+      </div>
+      <button disabled>Redeem! (15000 points)</button>
+    </div>
+
+  </div>
+
+  <br>
+  <sub style="display:block; text-align:center;">(C) 2024-2025 Yuhann Wiyono Petisme. Licensed under the GNU GPL.</sub>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IMF2 Forum</title>
+    <style>
+        body { font-family: Sans-serif; background-color: #F0F0F0; padding: 1rem; }
+        .chat-box { max-width: 600px; margin: auto; background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.1); }
+        .message { margin: 1rem 0; padding: 0.5rem; border-left: 4px solid #007BFF; background-color: #eef; border-radius: 5px; }
+        .author { font-weight: bold; margin-bottom: 0.2rem; }
+        .timestamp { font-size: 0.8em; color: #DDD; }
+        .form-area { margin-top: 2rem; }
+    </style>
+</head>
+<body>
+      <nav style="background:#0A1D3D; display:flex; justify-content:center;">
+    <ul style="list-style:none; margin:0; padding:0; display:flex;">
+      <li style="position:relative;">
+        <a href="/" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Home</a>
+      </li>
+      <li style="position:relative;">
+        <a href="/about" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Introduction</a>
+      </li>
+      <li style="position:relative;">
+        <a href="/submit" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Submit a photo</a>
+      </li>
+      <li style="position:relative;">
+        <a href="/badges" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Badges</a>
+      </li>
+      <li style="position:relative;">
+        <a href="/rewards" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Rewards</a>
+      </li>
+      <li style="position:relative;">
+        <a href="/login" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Login</a>
+      </li>
+      <li style="position:relative;">
+              <a href="/forum" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Forum</a>
+      </li>
+      <li style="position:relative;">
+              <a href="/logout" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Log me out</a>
+      </li>
+    </ul>
+  </nav>
+
+    <div class="chat-box">
+        <h2>Ironing Forum</h2>
+	<p>Welcome to the Ironing Forum, where only time is an issue when awaiting an answer to your ironing queries. If you ever need help, please try to solve it yourself by checking out our resources at Introduction before asking. Thank you.</p>
+        {% for msg in messages %}
+        <div class="message">
+            <div class="author">{{ msg.author }}</div>
+            <div>{{ msg.content }}</div>
+            <div class="timestamp">{{ msg.timestamp.strftime('%Y-%m-%d %H:%M') }}</div>
+        </div>
+        {% endfor %}
+
+        <div class="form-area">
+            <form method="POST">
+                <textarea name="content" rows="3" cols="50" placeholder="Type your message..." required></textarea><br>
+                <button type="submit">Send 💬</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

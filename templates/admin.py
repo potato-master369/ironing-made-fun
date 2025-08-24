@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 2rem; background-color: #f0f0f5; }
+        .panel { max-width: 900px; margin: auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        h1 { text-align: center; margin-bottom: 1.5rem; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th, td { padding: 10px; border-bottom: 1px solid #ccc; text-align: left; }
+        th { background-color: #eee; }
+        .role-badge { padding: 4px 8px; border-radius: 5px; background-color: #007BFF; color: white; font-size: 0.85em; }
+        button { padding: 6px 10px; font-size: 0.85em; margin-right: 5px; }
+        form.inline { display: inline; margin-right: 5px; }
+        input[type="password"] { width: 120px; padding: 4px; margin-right: 5px; font-size: 0.85em; }
+    </style>
+</head>
+<body>
+    <div class="panel">
+        <h1>🛡️ Admin Dashboard</h1>
+        <p>Total Users: {{ stats.total_users }} | Admins: {{ stats.admin_count }} | Moderators: {{ stats.moderator_count }}</p>
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Actions</th>
+            </tr>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td><span class="role-badge">{{ user.role }}</span></td>
+                <td>
+                    <!-- Promote to Admin -->
+                    {% if user.role != "admin" %}
+                    <form method="POST" action="/promote" class="inline">
+                        <input type="hidden" name="user_id" value="{{ user.id }}">
+                        <button type="submit">Promote 🛡️</button>
+                    </form>
+                    {% else %}
+                    <span style="color: green;">✔ Admin</span>
+                    {% endif %}
+
+                    <!-- Delete User -->
+                    <form method="POST" action="/delete" class="inline" onsubmit="return confirm('Are you sure you want to delete {{ user.username }}?');">
+                        <input type="hidden" name="user_id" value="{{ user.id }}">
+                        <button type="submit" style="background-color:#dc3545; color:white;">Delete 🗑️</button>
+                    </form>
+
+                    <!-- Change Password -->
+                    <form method="POST" action="/change-password" class="inline">
+                        <input type="hidden" name="user_id" value="{{ user.id }}">
+                        <input type="password" name="new_password" placeholder="New pwd" required>
+                        <button type="submit">Change 🔑</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

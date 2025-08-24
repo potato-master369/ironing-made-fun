@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ironing Made Fun Proof-of-concept</title>
+</head>
+<body style="margin:0; font-family:sans-serif; background:#f4f4f4;">
+
+  <nav style="background:#0A1D3D; display:flex; justify-content:center;">
+    <ul style="list-style:none; margin:0; padding:0; display:flex;">
+      <li style="position:relative;">
+        <a href="/" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Home</a>
+      </li>
+      <li style="position:relative;">
+        <a href="/about" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Introduction</a>
+      </li>
+      <li style="position:relative;">
+        <a href="/submit" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Submit a photo</a>
+      </li>
+      <li style="position:relative;">
+        <a href="/badges" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Badges</a>
+      </li>
+      <li style="position:relative;">
+        <a href="/rewards" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Rewards</a>
+      </li>
+      <li style="position:relative;">
+        <a href="/login" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Login</a>
+      </li>
+      <li style="position:relative;">
+              <a href="/forum" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Forum</a>
+      </li>
+      <li style="position:relative;">
+              <a href="/logout" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Log me out</a>
+      </li>
+    </ul>
+  </nav>
+
+  <script>
+    document.querySelectorAll('nav li').forEach(function(li) {
+      li.addEventListener('mouseenter', function() {
+        const submenu = li.querySelector('ul');
+        if (submenu) submenu.style.display = 'block';
+      });
+      li.addEventListener('mouseleave', function() {
+        const submenu = li.querySelector('ul');
+        if (submenu) submenu.style.display = 'none';
+      });
+    });
+  </script>
+
+  <h1>Introduction</h1>
+
+
+  <ul>
+    <li>Ironing is the use of an iron, usually heated, to remove wrinkles and unwanted creases from fabric. The heating is commonly done to a temperature of 180–220 °C (360–430 °F), depending on the fabric. Ironing works by loosening the bonds between the long-chain polymer molecules in the fibres of the material.</li>
+  
+    <li>Ironing is the process of using a hot iron to remove wrinkles and creases from clothes, especially for professional and formal occasions like dress shirts, dress pants, and blouses. Some looser clothes don't require ironing. While some people opt for dry cleaning, mastering ironing techniques at home with an iron, ironing board, and spray bottle is possible.</li>
+  </ul>
+  <h2>Further reading</h2>
+  <p>Check out these reads to find out more about ironing. These links are not affiliated to us in any way possible nor sponsored content. Feel free to read at your own pace!</p>
+  <h3>Ironing tutorials</h3>
+  <a href="https://www.ihateironing.com/blog/how-to-iron-a-shirt-the-ultimate-guide/">I Hate Ironing - How to Iron a Shirt - The Ultimate Guide</a>
+  <br>
+  <a href="https://www.wikihow.com/Use-an-Iron">How to Use an Iron - WikiHow</a>
+  <br>
+  <a href="https://www.youtube.com/watch?v=aBuSZYws_Dg">How to Iron Shirts Like a Pro - YouTube (video form)</a>
+  <br>
+  <a href="/forum">IMF2 Forum site</a>
+  <p>These aren't all the resources in the universe on ironing - just a curated few. If they don't meet your needs, just search another tutorial up and it will do lots for you. As long as you don't have any more creased shirts, anything helps!</p>
+  <h3>Ironing injury help</h3>
+  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3978587/">NIH (US) - Iron burns - a problem in adults and children</a>
+  <p>Nobody's perfect. If you get an injury while ironing, just check out this resource and it has some good information on treating burns. However, prevention is always better than cure! Stay safe!</p>
+  <h3>How to fix your internet connection</h3>
+  <a href="https://wiki.archlinux.org/title/Iwd">ArchWiki - IWD (For Linux IWD users)</a>
+  <br>
+  <a href="https://wiki.archlinux.org/title/NetworkManager">ArchWiki - NetworkManager (for Linux NetworkManager/nmcli users)</a>
+  <br>
+  <a href="https://support.apple.com/en-sg/101588">Apple Support SG - If your Mac isn't connecting to the Internet via Wi-Fi (for MacOS users)</a>
+  <br>
+  <a href="http://support.microsoft.com/en-us/windows/fix-wi-fi-connection-issues-in-windows-9424a1f7-6a3b-65a6-4d78-7f07eee84d2c">Microsoft - Fix Wi-Fi connection issues in Windows (for Windows users</a>
+  <p>If you feel your Wi-Fi might go out while listening to your ironing playlist or reading IMF2 Forums, read this!</p>
+  <br>
+  <sub>(C) 2024-2025 Yuhann Wiyono Petisme. Licensed under the GNU GPL.</sub>
+</body>
+</html>
+	

@@ -1,0 +1,13 @@
+[Unit]
+Description=IMF2 Flask app Gunicorn service
+After=network.target
+
+[Service]
+User=debian
+Group=debian
+WorkingDirectory=/home/debian/ironing
+Environment="PATH=/usr/bin"
+ExecStart=/usr/bin/gunicorn --workers 2 --bind 0.0.0.0:5000 app:app
+
+[Install]
+WantedBy=multi-user.target

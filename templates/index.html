@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ironing Made Fun Proof-of-concept</title>
+</head>
+<body style="margin:0; font-family:sans-serif; background:#f4f4f4;">
+
+  <nav style="background:#0A1D3D; display:flex; justify-content:center;">
+    <ul style="list-style:none; margin:0; padding:0; display:flex;">
+      <li style="position:relative;">
+        <a href="/" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Home</a>
+      </li>
+      <li style="position:relative;">
+        <a href="/about" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Introduction</a>
+      </li>
+      <li style="position:relative;">
+        <a href="/submit" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Submit a photo</a>
+      </li>
+      <li style="position:relative;">
+        <a href="/badges" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Badges</a>
+      </li>
+      <li style="position:relative;">
+        <a href="/rewards" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Rewards</a>
+      </li>
+      <li style="position:relative;">
+        <a href="/login" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Login</a>
+      </li>
+      <li style="position:relative;">
+              <a href="/forum" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Forum</a>
+      </li>
+      <li style="position:relative;">
+              <a href="/logout" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Log me out</a>
+      </li>
+    </ul>
+  </nav>
+
+  <script>
+    document.querySelectorAll('nav li').forEach(function(li) {
+      li.addEventListener('mouseenter', function() {
+        const submenu = li.querySelector('ul');
+        if (submenu) submenu.style.display = 'block';
+      });
+      li.addEventListener('mouseleave', function() {
+        const submenu = li.querySelector('ul');
+        if (submenu) submenu.style.display = 'none';
+      });
+    });
+  </script>
+
+  <h1>Home page</h1>
+
+  {% if current_user.is_authenticated %}
+      <p>Currently logged in as {{ current_user.username }}. You have {{ current_user.points }} points as of now.</p>
+  {% else %}
+      <p>You are not logged in.</p>
+  {% endif %}
+  
+	
+  <p>Welcome to Ironing Made Fun! This initiative was created to bring a light-hearted twist to one of life’s more mundane tasks—ironing. Through a playful reward system, we aim to make the experience more enjoyable, productive, and maybe even a little entertaining.</p>
+  <p>This proof of concept is a collaborative project by Yuhann, Zhang Chi, and Yuhao, originally prototyped on Scratch (users: hannyu13, helloed123, and oahuygnaw). Since then, it has evolved into a more refined demonstration of how gamification can be applied to everyday routines.</p>
+  <p>We hope you enjoy exploring the project as much as we enjoyed building it. Thank you for visiting, and may your creases always be intentional.</p>
+
+
+  <h3>Need help registering?</h1>
+  <a href="/register" style="display:block; padding:14px 20px; color:#1793D1; text-decoration:none;">Register here!</a>
+  <img src="{{ url_for('static', filename='ironing.jpg') }}" alt="Image credit: pexels"
+       style="width:100%; height:auto;">
+  <br>
+  <h3>Disclaimer</h3>
+  <p>This application is a proof of concept created for demonstration purposes only. All references to rewards, outcomes, or achievements are fictional and do not represent real-world incentives, prizes, or guarantees</p>
+
+  <!--oh yea maybe dont keep that-->
+
+  <br>
+  <sub>(C) 2024-2025 Yuhann Wiyono Petisme. Licensed under the GNU GPL.</sub>
+</body>
+</html>
+	

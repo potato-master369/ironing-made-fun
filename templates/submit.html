@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ironing Made Fun Proof-of-concept</title>
+</head>
+<body style="margin:0; font-family:sans-serif; background:#f4f4f4;">
+
+  <nav style="background:#0A1D3D; display:flex; justify-content:center;">
+    <ul style="list-style:none; margin:0; padding:0; display:flex;">
+      <li style="position:relative;">
+        <a href="/" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Home</a>
+      </li>
+      <li style="position:relative;">
+        <a href="/about" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Introduction</a>
+      </li>
+      <li style="position:relative;">
+        <a href="/submit" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Submit a photo</a>
+      </li>
+      <li style="position:relative;">
+        <a href="/badges" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Badges</a>
+      </li>
+      <li style="position:relative;">
+        <a href="/rewards" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Rewards</a>
+      </li>
+      <li style="position:relative;">
+        <a href="/login" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Login</a>
+      </li>
+      <li style="position:relative;">
+              <a href="/forum" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Forum</a>
+      </li>
+      <li style="position:relative;">
+              <a href="/logout" style="display:block; padding:14px 20px; color:white; text-decoration:none;">Log me out</a>
+      </li>
+    </ul>
+  </nav>
+
+  <h1> Submit </h1>
+  <p> Submit your pictures of ironed clothes to earn points for rewards! It's that simple! Click "Choose file", select your file from your file manager and press submit! Do make sure to only submit a valid image (.jpg, .jpeg, .png, .pdf)</p>
+<form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">
+  <input type="file" id="file-upload" name="file" accept=".jpg,.jpeg,.png,.pdf" />
+  <div id="upload-progress" class="progress" hidden>
+    <div class="progress-bar" role="progressbar"></div>
+  </div>
+  <button type="submit">Upload Files</button>
+</form>
+
+  <script>
+    const form = document.getElementById('upload-form');
+    const progress = document.getElementById('upload-progress');
+    const progressBar = progress.querySelector('.progress-bar');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      progress.hidden = false;
+
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', '/upload');
+
+      xhr.upload.addEventListener('progress', (e) => {
+        if (e.lengthComputable) {
+          const percent = (e.loaded / e.total) * 100;
+          progressBar.style.width = percent + '%';
+          progressBar.setAttribute('aria-valuenow', percent.toFixed(0));
+        }
+      });
+
+      xhr.onload = () => {
+        progress.hidden = true;
+        const responseText = xhr.responseText; // Get response as string
+
+        alert(`Server responded with:\n\n${responseText}`);
+
+        form.reset();
+        progressBar.style.width = '0%';
+        progressBar.setAttribute('aria-valuenow', '0');
+      };
+
+
+      xhr.onerror = () => {
+        console.error('Upload failed: network error');
+        alert('Upload failed. Please try again.');
+        progress.hidden = true;
+      };
+
+      xhr.send(formData);
+    });
+  </script>
+  
+  
+  <br>
+  <sub>(C) 2024-2025 Yuhann Wiyono Petisme. Licensed under the GNU GPL.</sub>
+</body>
+</html>
+	
